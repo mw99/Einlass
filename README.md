@@ -7,7 +7,7 @@ A low inhibition threshold for user account creation could also be considered a 
 
 Einlass is written in Swift 3, has a very small dependency footprint, extensive error handling capabilities and is easy to integrate via [Cocoa Pods](https://cocoapods.org/) or the [Swift Package Manager](https://swift.org/package-manager/).
 
-![DemoApp](Misc/demo.gifk)
+![DemoApp](Misc/demo.gif)
 
 ## Result Values
 
@@ -142,7 +142,7 @@ twAuthenticator.perform()
 Do not call `.perform()` on the same `TwitterAuthenticator` twice. Always create a new instance. So it would be better to not make it a class property. The delegate must conform to the `TwitterAuthenticatorDelegate` protocol, which consist of the following 3 methods:
 
 
---
+- - - -
 ##### `twitterAccountSelection:withAccounts:choice:`
 
 
@@ -160,7 +160,7 @@ func twitterAccountSelection(withAccounts accounts: [String], choice: @escaping 
 }
 ```
 
---
+- - - -
 ##### `twitterAuthenticatorFinished:withCredentials:`
 
 Is called upon a successful authentication flow. Here you may pass the received credentials to your backend for verification. Example:
@@ -181,7 +181,7 @@ func twitterAuthenticatorFinished(withCredentials credentials: TwitterAuthentica
 }
 ```
 
---
+- - - -
 ##### `twitterAuthenticatorFinished:withProblem:`
 
 Is called when the authentication flow encountered a problem and can't continue. An enum of type `TwitterAuthenticator.Problem` is passed to the method describing the error.
@@ -226,7 +226,7 @@ fbAuthenticator.perform()
 Do not call `.perform()` on the same `FacebookAuthenticator` twice. Always create a new instance. So it would be better to not make it a class property. The delegate must conform to the `FacebookAuthenticatorDelegate` protocol, which consist of the following 3 methods:
 
 
---
+- - - -
 ##### `facebookAccountConfirmation:withAccount:proceed:`
 
 
@@ -242,7 +242,7 @@ func facebookAccountConfirmation(withAccount account: String, proceed: @escaping
 }
 ```
 
---
+- - - -
 ##### `facebookAuthenticatorFinished:withCredentials:`
 
 Is called upon a successful authentication flow. Here you may pass the received credentials to your backend for verification. Example:
@@ -262,7 +262,7 @@ func facebookAuthenticatorFinished(withCredentials credentials: FacebookAuthenti
 }
 ```
 
---
+- - - -
 ##### `facebookAuthenticatorFinished:withProblem:`
 
 Is called when the authentication flow encountered a problem and can't continue. An enum of type `FacebookAuthenticator.Problem` is passed to the method describing the error.
